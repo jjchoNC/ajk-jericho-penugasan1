@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Calculator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h3>Calculator</h3>
+        Angka 1 : <input v-model="inp1">
+        <br><br>
+        Angka 2 : <input v-model="inp2">
+        <br><br>
+        <button style="margin-right: 5px;" @click="result = parseFloat(inp1) + parseFloat(inp2)">+</button>
+        Hasil : {{result}}
+    </div>
+</body>
+<script>
+    const { createApp, ref } = Vue
+    createApp({
+        data() {
+            return {
+                result: 0,
+            }
+        }
+    }).mount('#app')
+</script>
+</html>
