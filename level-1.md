@@ -96,3 +96,7 @@ Penggunaan [`git merge`](https://github.com/jjchoNC/ajk-jericho-penugasan1/blob/
 ![after-merge](media/level-1/after-merge.png)
 
 `git merge --no-ff` ini berbeda dengan instruksi git merge biasannya. Instruksi `git merge` secara default menggunakan opsi `git merge --ff` yang mana jika kondisinya memungkinkan untuk dilakukan _merge fast forward_ maka tidak akan membuat merge commit  baru. Sebaliknya jika kondisi tidak memenuhi maka akan dilakuakn merge no fast forward yang membuat merge commit baru seperti penggunaan `git merge --no-ff`.
+
+----------------
+## Git Graph
+![git-graph](media/level-1/git-graph.png)
