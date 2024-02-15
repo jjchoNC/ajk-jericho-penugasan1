@@ -56,10 +56,12 @@ Saya juga mengimplementasikan penggunaan `git stash` yang mana akan mengkarantin
 ![stash](media/level-1/stash.png)
 
 Tidak hanya itu, dalam repository ini juga mengimplementasikan penggunaan `git merge`. Disini saya menggunakan perintah `git merge --no-ff` yang mana akan membuat merge commit baru. Berikut adalah gambaran _git graph_ sebelum dan sesudah dilakukan merge.
-![bfr-merge](media/level-1/before-merge.png)
-![afr-merge](media/level-1/after-merge.png)
 
-Pada bagian akhir pengerjaan pada repository ini, saya juga mencoba instruksi `git reset`, `git restore`, dan juga `git pull`. Sebelum mencobanya saya melakukan commit dan juga push pada branch master dengan melakukan perubahan pada file readme.
+![before-merge](media/level-1/before-merge.png)
+![merge-no-ff](media/level-1/merge-no-ff.png)
+![after-merge](media/level-1/after-merge.png)
+
+Karena saya lupa ada beberapa instruksi yang belum saya coba. Pada bagian **akhir** pengerjaan pada repository ini, saya juga mencoba instruksi `git reset`, `git restore`, dan juga `git pull`. Sebelum mencobanya saya melakukan commit dan juga push pada branch master (sudah termerge dengan branch development) dengan melakukan perubahan pada file readme.
 
 ![step1-reset](media/level-1/push-readme.png)
 
@@ -89,6 +91,8 @@ Untuk menyelesaikannya depat menggunakan opsi **Accept Current Changes**, **Acce
 
 ### 5. Penjelasan Merge No Fast Forward
 Penggunaan [`git merge`](https://github.com/jjchoNC/ajk-jericho-penugasan1/blob/master/level-1.md?plain=1#L58) pada _line_ tersebut menggunakan opsi `git merge --no-ff`.
+![before-merge](media/level-1/before-merge.png)
 ![merge-no-ff](media/level-1/merge-no-ff.png)
+![after-merge](media/level-1/after-merge.png)
 
 `git merge --no-ff` ini berbeda dengan instruksi git merge biasannya. Instruksi `git merge` secara default menggunakan opsi `git merge --ff` yang mana jika kondisinya memungkinkan untuk dilakukan _merge fast forward_ maka tidak akan membuat merge commit  baru. Sebaliknya jika kondisi tidak memenuhi maka akan dilakuakn merge no fast forward yang membuat merge commit baru seperti penggunaan `git merge --no-ff`.
