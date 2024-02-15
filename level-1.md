@@ -77,3 +77,12 @@ Dari gambar diatas terlihat bahwa perubahan yang sudah saya push ke remote tidak
 ![after-pull](media/level-1/after-pull.png)
 
 Dapat dilihat bahwa kondisi HEAD sudah sama dengan kondisi _branch_ master pada remote dan juga perubahan pada file readme sudah terlihat.
+
+### 4. Penanganan Conflict Pada Git
+Instruksi [`git merge`](https://github.com/jjchoNC/ajk-jericho-penugasan1/blob/master/level-1.md?plain=1#L58) yang saya lakukan sebelumnya membuahkan konflik karena saya melakukan perubahan pada file yang sama di line yang sama saat melakuakn perubahan pada featureA dan featureB.
+
+![conflict](media/level-1/conflict.png)
+
+Untuk menyelesaikannya depat menggunakan opsi **Accept Current Changes**, **Accept Incoming Changes**, **Accept Both Changes**. Karena dalam kasus ini saya ingin memasukan kedua featureA dan featureB sehingag saya menggunakan opsi **Accept Both Changes** yang mana akan otomatis membuat baris baru dan menggabungkan kedua perubahan featureA dan featureB. Setelah itu pilih **Resolve in Merge Editor** dan **Complete Merge** lalu lakukan commit dan push ke remote.
+
+![after-fix](media/level-1/after-fix.png)
