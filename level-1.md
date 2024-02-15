@@ -36,3 +36,11 @@ Untuk membuat repository git, kita perlu menginisialisasi git didalam direktori 
 Setelah melakukan inisialisasi dan penambahan files dan direktori, gunakan `git add .` untuk menambahkan perubahan ke _stagging area_ lalu commit menggunakan `git commit -m "message"` dengan commit message sesuai dengan [_conventional commit message_](https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13). Maka file sudah ditambahkan ke repositori lokal, selanjutnya untuk membuat _remote repository_ kita bisa langsung membuatnya pada [GitHub](https://github.com/new). Setelah itu jalankan perintah yang ada. Untuk selengkapnya bisa dilihat pada gambar dibawah ini.
 
 ![init](media/level-1/init.png)
+
+### 2. Implementasi Branching
+Pertama-tama untuk membuat branch kita bisa menggunakan `git branch <branch_name>`. Namun disini saya menggunakan `git checkout -b <branch_name>`, perintah tersebut akan membuat branch baru dan akan berpindah ke branch yang baru dibuat. Pada kasus ini saya membuat dahulu branch development dan melakukan perubahan pada file `src/index.html` lalu melakukan commit dan push seperti dibawah. 
+![branch-development](media/level-1/branch-development.png)
+Karena pada soal juga diminta untuk menambahkan branch featureA dan featureB disini saya menggunakan perintah checkout yang telah dilakukan sebelumnya untuk membuat branch featureA dan featureB.
+
+Setelah branch featureA dan featureB telah dibuat, saya mencoba untuk melakukan commitan fitur pada masing-masing branch.
+![commit-feature](media/level-1/commit-feature.png)
