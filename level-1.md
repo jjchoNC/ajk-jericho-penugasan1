@@ -42,5 +42,38 @@ Pertama-tama untuk membuat branch kita bisa menggunakan `git branch <branch_name
 ![branch-development](media/level-1/branch-development.png)
 Karena pada soal juga diminta untuk menambahkan branch featureA dan featureB disini saya menggunakan perintah checkout yang telah dilakukan sebelumnya untuk membuat branch featureA dan featureB.
 
-Setelah branch featureA dan featureB telah dibuat, saya mencoba untuk melakukan commitan fitur pada masing-masing branch.
+Setelah branch featureA dan featureB telah dibuat, saya mencoba untuk melakukan commitan fitur pada masing-masing branch yang nantinya akan di merge dengan _branch_ development.
 ![commit-feature](media/level-1/commit-feature.png)
+
+### 3. Implementasi Instruksi Git
+Banyak implementasi instruksi Git yang saya gunakan disini, yang pertama ada instruksi `git push` yang saya gunakan untuk mengirimkan commitan file dari _local repository_ ke _remote repository_
+![push](media/level-1/push.png)
+
+Selain itu saya juga mengimplementasikan instruksi `git diff` yang saya gunakan untuk membandingkan perubahan/perbedaan antar branch, untuk membandingkan kedua branch tersebut saya menggunakan instruksi `git diff <branch1> <branch2>` yang mana pada kondisi ini saya menggunakan instruksi `git diff master development" yang akan membandingkan branch master dan development.
+![diff](media/level-1/diff.png)
+
+Saya juga mengimplementasikan penggunaan `git stash` yang mana akan mengkarantina/menyembunyikan perubahan pada _branch_ dan dapat berpindah ke _branch_ lain tanpa perlu melakukan commit. Untuk mengembalikan perubahan tersebut kita bisa menggunakan `git stash pop`.
+![stash](media/level-1/stash.png)
+
+Tidak hanya itu, dalam repository ini juga mengimplementasikan penggunaan `git merge`. Disini saya menggunakan perintah `git merge --no-ff` yang mana akan membuat merge commit baru. Berikut adalah gambaran _git graph_ sebelum dan sesudah dilakukan merge.
+![bfr-merge](media/level-1/before-merge.png)
+![afr-merge](media/level-1/after-merge.png)
+
+Pada bagian akhir pengerjaan pada repository ini, saya juga mencoba instruksi `git reset`, `git restore`, dan juga `git pull`. Sebelum mencobanya saya melakukan commit dan juga push pada branch master dengan melakukan perubahan pada file readme.
+
+![step1-reset](media/level-1/push-readme.png)
+
+Setelah itu saya menggunakan perintah `git reset HEAD~` untuk melakukan _reset_ pada commitan terbaru dan menghasilkan kondisi git graph seperti dibawah
+
+![step2-reset](media/level-1/reset.png)
+
+Setelah itu saya menggunakan instruksi `git restore .` untuk memulihkan perubahan yang ada pada _branch_ master sehingga menyebabkan _branch_ remote origin/master lebih maju satu commitan dibandingkan _branch_ pada local.
+
+![step3-restore](media/level-1/restore.png)
+
+Dari gambar diatas terlihat bahwa perubahan yang sudah saya push ke remote tidak ditemukan pada repository lokal. Sehingga perlu dilakukan instruksi `git pull origin master` untuk menarik perubahan dari branch master di remote ke branch master di lokal.
+
+![pull](media/level-1/pull.png)
+![after-pull](media/level-1/after-pull.png)
+
+Dapat dilihat bahwa kondisi HEAD sudah sama dengan kondisi _branch_ master pada remote dan juga perubahan pada file readme sudah terlihat.
